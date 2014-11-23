@@ -1,3 +1,6 @@
+[installing_ci_runner](https://gitlab.com/gitlab-org/gitlab-ci-runner/blob/master/README.md)
+===
+
 dir structure:
 ----
 - PUBLIC/ - should not contain any private info (TOKENS, etc)
