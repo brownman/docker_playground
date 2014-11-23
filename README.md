@@ -8,16 +8,30 @@ dir structure:
 
 
 ORDER:
------
+====
+
+install linux packages + ruby
+------
 - install linux deps
 - install ruby: patch it , then compile it 
 
+
+store some ENV variables:
+-------
 - edit ~/config.cfg: add required env vars
 - export env vars using: source ~/config.cfg (we don't want to commit those vars)
 
+
+register the runner on the C.I server:
+------
+- using vars:  REGISTRATION_TOKEN + C.I DOMAIN NAME
 - switch user to gitlab_ci_runner
-- go to his home, clone a git repo
+- go to his home,
+- in not exist: clone a the git repo: gitlab-ci-runner
+- cd into gitlab-ci-runner
 - install required gems
 
-- run the service
+finally
+----
 - update runner if needed
+- run the runner service
