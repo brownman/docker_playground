@@ -1,1 +1,1 @@
-chmod u+x SH/*.sh
+chmod u+x **/*.sh
