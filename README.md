@@ -6,9 +6,9 @@ dir structure:
 
 ORDER:
 -----
-install linux deps
-install ruby deps
-export env vars using: source config.cfg
-install required  gems
-run the service
-update runner if needed
+- install linux deps
+- install ruby deps
+- export env vars using: source config.cfg
+- install required  gems
+- run the service
+- update runner if needed
