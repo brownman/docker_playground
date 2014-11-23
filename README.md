@@ -7,8 +7,14 @@ dir structure:
 ORDER:
 -----
 - install linux deps
-- install ruby deps
-- export env vars using: source config.cfg
-- install required  gems
+- install ruby: patch it , then compile it 
+
+- edit ~/config.cfg: add required env vars
+- export env vars using: source ~/config.cfg (we don't want to commit those vars)
+
+- switch user to gitlab_ci_runner
+- go to his home, clone a git repo
+- install required gems
+
 - run the service
 - update runner if needed
