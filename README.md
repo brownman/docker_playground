@@ -29,7 +29,7 @@ register the runner on the C.I server:
 - go to his home,
 - in not exist: clone a the git repo: gitlab-ci-runner
 - cd into gitlab-ci-runner
-- install required gems
+- run some scripts..
 
 finally
 ----
