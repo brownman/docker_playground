@@ -31,6 +31,11 @@ register the runner on the C.I server:
 - cd into gitlab-ci-runner
 - run some scripts..
 
+
+docker+node
+----
+- [link](https://github.com/ufirstgroup/gitlab-ci-runner-nodejs)
+
 finally
 ----
 - update runner if needed
