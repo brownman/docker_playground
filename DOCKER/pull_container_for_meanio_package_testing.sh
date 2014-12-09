@@ -1,4 +1,5 @@
-sudo docker pull brownman/gitlab-ci-runner-nodejs
+test -v CONTAINER
+sudo docker pull $CONTAINER
 #codingforce/
 
 
