@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/brownman/CI_RUNNER.svg?style=svg)](https://circleci.com/gh/brownman/CI_RUNNER)
+
 Playground for Docker testing!
 -------------
 - use circleCI to run tests on containers !
