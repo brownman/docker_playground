@@ -6,4 +6,4 @@ dependencies:
   override:
     - docker info
     - ls -l ./TEST/Dockerfile.scratch
-    - sudo docker build - <  ./TEST/Dockerfile.scratch
+    - docker build - <  ./TEST/Dockerfile.scratch
