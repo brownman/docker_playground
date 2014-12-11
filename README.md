@@ -15,3 +15,7 @@ mongo:
 - https://circleci.com/gh/brownman/docker-mongodb
 - https://github.com/tianon/dockerfiles/blob/master/mongodb-server/Dockerfile
 
+
+tests:
+---
+- https://github.com/docker/docker/blob/master/daemon/info.go
