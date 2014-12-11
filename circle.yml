@@ -5,5 +5,5 @@ machine:
 dependencies:
   override:
     - docker info
-    - ls -l ./TEST/Dockerfile-scratch
-    - docker build  - < github.com/brownman/CI_RUNNER/Dockerfile-scratch
+    - ls -l ./test/scratch/Dockerfile
+    - docker build -t scratch1 ./test/scratch
