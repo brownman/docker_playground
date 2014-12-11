@@ -8,5 +8,4 @@ dependencies:
     - ls -l ./test/Dockerfile.scratch
     #- docker build -t scratch1 ./test/scratch
     #- docker build -t runner - < Dockerfile.runner
-    
     - docker build -t runner - < ./test/Dockerfile.scratch
