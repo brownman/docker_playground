@@ -1,5 +1,5 @@
-#https://github.com/tianon/dockerfiles/blob/master/true/Dockerfile
-
 FROM scratch
 COPY hello /
 CMD ["/hello"]
+
+#https://github.com/tianon/dockerfiles/blob/master/true/Dockerfile
