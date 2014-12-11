@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/brownman/CI_RUNNER.svg?style=svg)](https://circleci.com/gh/brownman/CI_RUNNER)
+[![Circle CI](https://circleci.com/gh/brownman/docker_playground.svg?style=svg)](https://circleci.com/gh/brownman/docker_playground)
 
 Playground for Docker testing!
 -------------
