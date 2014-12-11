@@ -6,4 +6,7 @@ dependencies:
   override:
     - docker info
     - ls -l ./test/scratch/Dockerfile
-    - docker build -t scratch1 ./test/scratch
+    #- docker build -t scratch1 ./test/scratch
+    #- docker build -t runner - < Dockerfile.runner
+    
+    - docker build -t runner - < ./test/scratch/Dockerfile
