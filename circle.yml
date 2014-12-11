@@ -5,4 +5,5 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build TEST/Dockerfile.scratch
+    - ls -l ./TEST/Dockerfile.scratch
+    - docker build -t brownman/scratch ./TEST/Dockerfile.scratch
