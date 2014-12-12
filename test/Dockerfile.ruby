@@ -39,8 +39,7 @@ ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh # or /etc/profile
 RUN echo 'eval "$(rbenv init -)"' >> $HOME/.bashrc
 
-
- ################################################ nvm
+################################################ nvm
 
 RUN sudo apt-get update && \
     sudo apt-get install -y build-essential libssl-dev libmysqlclient-dev && \
