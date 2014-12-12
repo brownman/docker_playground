@@ -8,6 +8,7 @@ dependencies:
     - ls -l ./test/Dockerfile.scratch
     #- docker build -t scratch1 ./test/scratch
     #- docker build -t runner - < Dockerfile.runner
-    - docker build -t ubuntu1 - < ./test/Dockerfile.scratch
-    - docker build -t runner - < ./test/Dockerfile.mongo
+#    - docker build -t ubuntu1 - < ./test/Dockerfile.scratch
+#    - docker build -t runner - < ./test/Dockerfile.mongo
+    - docker build -t runner - < ./test/Dockerfile.ruby
 
