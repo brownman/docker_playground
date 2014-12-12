@@ -1,4 +1,4 @@
-FROM scratch
+FROM busybox
 #COPY hello /
 #RUN /bin/sh touch 1.txt
 
