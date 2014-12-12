@@ -30,7 +30,6 @@ RUN addgroup --gid=1000 travis && \
     chown -R travis:travis /home && \
     chown -R travis:travis /usr/local
 ######################################################################################### rootless user
-USER travis
 # Install rbenv and ruby-build
 RUN git clone https://github.com/sstephenson/rbenv.git      $HOME/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
@@ -46,3 +45,4 @@ ENV PATH $HOME/.nvm/bin:$PATH
 ################################################ node 0.10
 ENV NODE_VERSION 0.10
 RUN /bin/bash -l -c "nvm install $NODE_VERSION && nvm use $NODE_VERSION && rm -rf $HOME/.nvm/bin && ln -s \$NVM_BIN $HOME/.nvm/bin"
+USER travis
