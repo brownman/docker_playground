@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM scratch
 #COPY hello /
 #RUN /bin/sh touch 1.txt
 
