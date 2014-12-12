@@ -19,3 +19,7 @@ mongo:
 tests:
 ---
 - https://github.com/docker/docker/blob/master/daemon/info.go
+
+solutions:
+----
+- [user permission](https://registry.hub.docker.com/u/jolicode/base/dockerfile/)
