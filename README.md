@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/brownman/CI_RUNNER.svg?style=svg)](https://circleci.com/gh/brownman/CI_RUNNER)
+[![Circle CI](https://circleci.com/gh/brownman/docker_playground.svg?style=svg)](https://circleci.com/gh/brownman/docker_playground)
 
 Playground for Docker testing!
 -------------
@@ -19,3 +19,7 @@ mongo:
 tests:
 ---
 - https://github.com/docker/docker/blob/master/daemon/info.go
+
+solutions:
+----
+- [user permission](https://registry.hub.docker.com/u/jolicode/base/dockerfile/)
