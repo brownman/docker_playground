@@ -25,3 +25,7 @@ tests:
 solutions:
 ----
 - [user permission](https://registry.hub.docker.com/u/jolicode/base/dockerfile/)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/brownman/docker_playground/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
