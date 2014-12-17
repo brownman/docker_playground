@@ -1,12 +1,13 @@
 #-d \
 
  #sudo docker run -e CI_SERVER_URL=https://ci.example.com -e REGISTRATION_TOKEN=replaceme -e HOME=/root -i -t codingforce/gitlab-ci-runner-nejs:latest /bin/bash
+cmd=${1:-}
 commander sudo   docker run  \
 	-e HOME=/home/gitlab_ci_runner \
     -e CI_SERVER_URL=$CI_SERVER_URL \
     -e REGISTRATION_TOKEN=$REGISTRATION_TOKEN \
     -e GITLAB_SERVER_FQDN=git.mean.io \
-    -i -t $CONTAINER /bin/bash
+     -i -t $CONTAINER /bin/bash -c "$cmd"
 
     #-e HOME=/root \
 
