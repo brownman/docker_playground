@@ -12,7 +12,7 @@ set_env(){
   permit
 }
 test_all(){
-  ./test/linking.sh
+  $file_test
 }
 
 
