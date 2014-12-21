@@ -17,7 +17,7 @@ permit(){
 set_env(){
 permit
 file_input=$dir_root/.test
-file_test=$( head -1 $file_input )
+test -v file_test || { file_test=$( head -1 $file_input ); }
 }
 test_all(){
 eval "$file_test"
