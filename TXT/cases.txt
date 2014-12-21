@@ -1,0 +1,2 @@
+#[3 args] CONTAINER_NAME, FLAGS_CONTAINER, CONTAINER_CMD_START
+brownman/nvm '-i -t --rm' 'whoami && source $HOME/.bashrc && cd myApp && source ~/.nvm/nvm.sh && nvm ls && mean status'
