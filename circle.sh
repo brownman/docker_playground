@@ -12,7 +12,7 @@ set_env(){
   permit
 }
 test_all(){
-  $file_test
+  commander "$file_test"
 }
 
 
