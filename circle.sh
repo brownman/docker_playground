@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-set -x
 set -u
 set +e 
+
+################# trap errors
 trap_err(){
 echo `caller`
 }
 trap trap_err ERR
+
+
+
 ################# anchor
 export dir_root=$( cd `dirname $0`; echo $PWD )
 echo 1>&2 "[dir_root] $dir_root"
