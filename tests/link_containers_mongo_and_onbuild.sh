@@ -13,12 +13,12 @@ container_mongo(){
   echo validating existance of local dir: /data/db
   ( test -d /data/db ) || ( sudo mkdir -p /data/db )
   #ensure mongo container is running
-  ( commander "$cmd_validate_running_container" ) || ( commander run_mongo_start )
-  commander "$validate_mongo_container_up" || { trace "[ERROR] failed launching mongo contirunning container"; }
+  ( commander "$cmd_validate_mongo_container_up" ) || { commander run_mongo; }
+#  commander "$cmd_validate_mongo_container_up" || { trace "[ERROR] failed launching mongo contirunning container"; }
 }
 
 container_app(){
-  commander run_mongo_link
+  commander_exit run_webapp
 }
 
 
@@ -35,7 +35,6 @@ steps(){
   ################ run 2 containers: mongo + webapp
   ################ Mongo should be available in Webapp: validate bounding by inspecting /etc/host on the web-container
   linking
-  ensure1
 }
 
 
