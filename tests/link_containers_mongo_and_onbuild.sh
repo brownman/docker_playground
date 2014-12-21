@@ -4,6 +4,7 @@ set -u
 set_env(){
   source $dir_root/CFG/helper.cfg
   source $dir_root/CFG/vars.cfg
+  source $dir_root/CFG/container.cfg
 }
 
 
