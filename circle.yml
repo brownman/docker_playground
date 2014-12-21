@@ -11,8 +11,8 @@ dependencies:
 
 test:
   override:
-    - sudo chmod +x ./test.sh
-    - ./test.sh
+    - sudo chmod +x ./circle.sh
+    - ./circle.sh
   #  - ls -l ./test/Dockerfile.scratch
     #- docker build -t scratch1 ./test/scratch
     #- docker build -t runner - < Dockerfile.runner
