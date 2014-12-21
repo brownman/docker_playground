@@ -12,16 +12,21 @@ container_mongo(){
   echo validating existance of local dir: /data/db
   ( test -d /data/db ) || ( sudo mkdir -p /data/db )
   #ensure mongo container is running
-  ( commander "$cmd_validate_running_container" ) || ( commander "$cmd_mongo" )
+  ( commander "$cmd_validate_running_container" ) || ( commander run_mongo_start )
   commander "$validate_mongo_container_up" || { trace "[ERROR] failed launching mongo contirunning container"; }
 }
 
 container_app(){
-  commander "$cmd_app"
+  commander run_mongo_link
 }
+
+
 linking(){ 
   container_mongo && container_app
 }
+
+
+
 
 steps(){
   set_env
