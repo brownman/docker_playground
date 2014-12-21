@@ -6,14 +6,13 @@ dependencies:
   override:
     - docker info
     - docker pull brownman/onbuild
+    - docker pull brownman/mongo
+
 
 test:
   override:
     - sudo chmod +x ./test.sh
-    - sudo chmod +x ./run.sh
-    - ./test.sh env
-    - ./run.sh 
-
+    - ./test.sh
   #  - ls -l ./test/Dockerfile.scratch
     #- docker build -t scratch1 ./test/scratch
     #- docker build -t runner - < Dockerfile.runner
