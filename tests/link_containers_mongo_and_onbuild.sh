@@ -1,6 +1,6 @@
 #!/bin/bash
 set -u
-clear
+
 set_env(){
   source $dir_root/CFG/helper.cfg
   source $dir_root/CFG/vars.cfg
@@ -29,6 +29,7 @@ linking(){
 
 
 steps(){
+  clear
   set_env
   ################ run 2 containers: mongo + webapp
   ################ Mongo should be available in Webapp: validate bounding by inspecting /etc/host on the web-container
