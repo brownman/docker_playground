@@ -1,24 +1,29 @@
 #!/usr/bin/env bash
 set -u
 set +e 
+
+################# trap errors
 trap_err(){
 echo `caller`
 }
 trap trap_err ERR
+
+
+
 ################# anchor
 export dir_root=$( cd `dirname $0`; echo $PWD )
 echo 1>&2 "[dir_root] $dir_root"
-
-cleanup(){
-commander $dir_root/DOCKER/rm_containers.sh
-}
 
 permit(){
   chmod +x *.sh . -R
 }
 
+cleanup(){
+commander $dir_root/DOCKER/rm_containers.sh
+}
+
+
 set_env(){
-permit
 file_input=$dir_root/.test
 file_test=$( head -1 $file_input )
 source CFG/vars.cfg
@@ -39,6 +44,7 @@ test -f $file_test || { echo 1>&2 ERR no such file $file_test; exit 1; }
 
 steps(){
 clear
+permit
  set_env
  ensure1
 test_all

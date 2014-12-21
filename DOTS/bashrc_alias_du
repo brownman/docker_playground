@@ -1,0 +1,16 @@
+alias bashrcE="vim $BASH_SOURCE"
+alias vi=vim
+alias config1='source ~/config.cfg'
+export EDITOR=vim
+echo run config1 to load config.cfg
+container1(){
+test $# -gt 0 || return
+echo $1 > /tmp/container
+echo /tmp/container updated:
+cat -n /tmp/container
+source $HOME/config.cfg
+}
+du1(){
+local dir=${1:-/var/lib/docker/vfs/dir}
+sudo du -b --max-depth 1 $dir | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e'
+}
