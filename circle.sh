@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
-
+set -x
+set -u
+set +e 
+trap_err(){
+echo `caller`
+}
+trap trap_err ERR
 ################# anchor
-dir_root=$( cd `dirname $0`; echo $PWD )
+export dir_root=$( cd `dirname $0`; echo $PWD )
 echo 1>&2 "[dir_root] $dir_root"
 
 permit(){
@@ -9,16 +15,22 @@ permit(){
 }
 
 set_env(){
-  permit
+permit
+file_input=$dir_root/.test
+file_test=$( head -1 $file_input )
 }
 test_all(){
-  commander "$file_test"
+eval "$file_test"
 }
 
+ensure1(){
+test -f $file_test || { echo 1>&2 ERR no such file $file_test; exit 1; }
+}
 
 steps(){
-  set_env
-  test_all
+ set_env
+ ensure1
+ test_all
 }
 
 
