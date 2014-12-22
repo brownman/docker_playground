@@ -14,7 +14,7 @@ permit(){
 chmod +x *.sh . -R
 }
 cleanup(){
-commander $dir_root/DOCKER/rm_containers.sh
+$dir_root/DOCKER/rm_containers.sh
 }
 set_env(){
 file_input=$dir_root/.test
