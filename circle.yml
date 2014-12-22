@@ -5,19 +5,19 @@ machine:
   environment:   
     timeout: 600
     #file_test:      'tests/link_containers_mongo_and_onbuild.sh'
-
+    dir_container: example
 
 dependencies:
   override:
     - docker info
-    - docker pull brownman/onbuild
-    - docker pull brownman/mongo
+#    - docker pull brownman/onbuild
+ #   - docker pull brownman/mongo
 
 
 test:
   override:
     - sudo chmod +x ./circle.sh
-    - ./circle.sh
+    - ./circle.sh $dir_container
   #  - ls -l ./test/Dockerfile.scratch
     #- docker build -t scratch1 ./test/scratch
     #- docker build -t runner - < Dockerfile.runner
