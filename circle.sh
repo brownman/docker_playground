@@ -52,10 +52,9 @@ steps(){
 
 #use file_wrap to customize docker-cli
 set_files(){
-#file_wrap="${1:-$dir_root/example/wrap.sh}" 
-#file_container="${2:-$dir_root/example/Dockerfile}" 
-#file_test="${3:-$dir_root/example/test.sh}"
 commander cd $dir_container
+#THIS DIR CAN BE IN OTHER REPO WHICH PULL THIS REPO
+commander chmod +x ./wrap.sh
 commander ./wrap.sh
 }
 steps 
