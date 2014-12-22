@@ -53,5 +53,6 @@ steps(){
 }
 
 
-
-steps 
+dir_container="$1"
+test -d $dir_container
+steps $dir_container
