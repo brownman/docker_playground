@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -u
-set +e 
+#set +e 
 ################# trap errors
 trap_err(){
-  echo `caller`
+  echo 1>&2 "_____ $FUNCNAME ______"
+  echo 1>&2 `caller`
 }
 trap trap_err ERR
 ################# anchor
@@ -20,9 +21,6 @@ set_env(){
   source $dir_root/config.cfg || { echo 1>&2 err sourcing .cfg files; exit 1; }
 }
 
-test_all(){
-  eval "$file_test"
-}
 
 ensure1(){
   ensure validate_space
@@ -45,6 +43,13 @@ steps(){
   ensure1
 }
 
-test -v CONTAINER
-test -v file_test
-steps "$CONTAINER" "$file_tests"
+test_one(){
+  eval "$file_test"
+}
+
+#use file_wrap to customize docker-cli
+file_wrap="${1:-$dir_root/example/wrap.sh}" 
+file_container="${2:-$dir_root/example/Dockerfile}" 
+file_test="${3:-$dir_root/example/test.sh}"
+steps 
+commander "$file_wrap" "$file_container" "$file_test"
