@@ -1,1 +1,1 @@
-commander 'docker run -i . bash < test.sh'
+commander 'docker run -i ./Dockerfile bash < ./test.sh'
