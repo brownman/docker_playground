@@ -23,8 +23,8 @@ set_env(){
 
 
 ensure1(){
-  ensure validate_space
-  ensure rm_containers
+  ensure disk_space
+  ensure containers_not_running
   test -f $file_test || { echo 1>&2 ERR no such file $file_test; exit 1; }
 }
 
