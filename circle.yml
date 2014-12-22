@@ -4,7 +4,7 @@ machine:
 
   environment:   
     timeout: 600
-    file_test:      'tests/link_containers_mongo_and_onbuild.sh'
+    #file_test:      'tests/link_containers_mongo_and_onbuild.sh'
 
 
 dependencies:
