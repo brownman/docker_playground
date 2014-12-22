@@ -5,15 +5,15 @@ set_env(){
   source $dir_root/CFG/helper.cfg
   source $dir_root/CFG/vars.cfg
   source $dir_root/CFG/container.cfg
+  source $dir_root/CFG/validate.cfg
 }
 
 
 #cmd_app="sudo docker run -v /data:/data --name $alias_mongo -d $CONTAINER_DB $cmd_mongo"
 container_mongo(){
-  echo validating existance of local dir: /data/db
-  ( test -d /data/db ) || ( sudo mkdir -p /data/db )
+
   #ensure mongo container is running
-  ( commander "$cmd_validate_mongo_container_up" ) || { commander run_mongo; }
+  run_mongo
 #  commander "$cmd_validate_mongo_container_up" || { trace "[ERROR] failed launching mongo contirunning container"; }
 }
 
