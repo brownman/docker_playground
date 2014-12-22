@@ -35,21 +35,23 @@ test_something(){
   echo
 }
 
+test_one(){
+  commander "$file_wrap" "$file_container" "$file_test"
+}
+
+
 steps(){
   test_something
   clear
   permit
   set_env
   ensure1
+  test_one
 }
 
-test_one(){
-  eval "$file_test"
-}
 
 #use file_wrap to customize docker-cli
 file_wrap="${1:-$dir_root/example/wrap.sh}" 
 file_container="${2:-$dir_root/example/Dockerfile}" 
 file_test="${3:-$dir_root/example/test.sh}"
 steps 
-commander "$file_wrap" "$file_container" "$file_test"
