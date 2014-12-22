@@ -16,8 +16,10 @@ permit(){
 }
 
 set_env(){
-  file_input=$dir_root/.test
-  file_test=$( head -1 $file_input )
+ # file_input=$dir_root/.test
+ # file_test=$( head -1 $file_input )
+ # test -f $file_test || { echo 1>&2 ERR no such file $file_test; exit 1; }
+
   source $dir_root/config.cfg || { echo 1>&2 err sourcing .cfg files; exit 1; }
 }
 
@@ -25,7 +27,6 @@ set_env(){
 ensure1(){
   ensure disk_space
   ensure containers_not_running
-  test -f $file_test || { echo 1>&2 ERR no such file $file_test; exit 1; }
 }
 
 test_something(){
