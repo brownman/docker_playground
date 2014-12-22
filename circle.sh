@@ -51,7 +51,11 @@ steps(){
 
 
 #use file_wrap to customize docker-cli
-file_wrap="${1:-$dir_root/example/wrap.sh}" 
-file_container="${2:-$dir_root/example/Dockerfile}" 
-file_test="${3:-$dir_root/example/test.sh}"
+set_files(){
+#file_wrap="${1:-$dir_root/example/wrap.sh}" 
+#file_container="${2:-$dir_root/example/Dockerfile}" 
+#file_test="${3:-$dir_root/example/test.sh}"
+commander cd $dir_container
+commander ./wrap.sh
+}
 steps 
