@@ -19,6 +19,7 @@ $dir_root/DOCKER/rm_containers.sh
 set_env(){
 file_input=$dir_root/.test
 file_test=$( head -1 $file_input )
+source $dir_root/config.cfg
 }
 test_all(){
 eval "$file_test"
