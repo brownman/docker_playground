@@ -34,11 +34,13 @@ test_something(){
   env | grep USER
   echo
 }
-
+ 
 test_one(){
-  commander "$file_wrap" "$file_container" "$file_test"
+commander cd $dir_container
+#THIS DIR CAN BE IN OTHER REPO WHICH PULL THIS REPO
+commander chmod +x ./wrap.sh
+commander ./wrap.sh
 }
-
 
 steps(){
   test_something
@@ -50,11 +52,5 @@ steps(){
 }
 
 
-#use file_wrap to customize docker-cli
-set_files(){
-commander cd $dir_container
-#THIS DIR CAN BE IN OTHER REPO WHICH PULL THIS REPO
-commander chmod +x ./wrap.sh
-commander ./wrap.sh
-}
+
 steps 
