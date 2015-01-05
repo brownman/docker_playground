@@ -16,8 +16,9 @@ dependencies:
 
 test:
   override:
-    - sudo chmod +x ./circle.sh
+    - sudo chmod +x *.sh . -R
     - ./circle.sh $dir_container
+    - export dir_root=$PWD; source config.cfg; ./tests/link_containers_mongo_and_onbuild.sh
   #  - ls -l ./test/Dockerfile.scratch
     #- docker build -t scratch1 ./test/scratch
     #- docker build -t runner - < Dockerfile.runner
