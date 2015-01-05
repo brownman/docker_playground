@@ -16,6 +16,7 @@ dependencies:
 
 test:
   override:
+    - sudo pidof mongod | xargs kill -9
     - sudo chmod +x *.sh . -R
     - ./circle.sh $dir_container
     - export dir_root=$PWD; source config.cfg; ./tests/link_containers_mongo_and_onbuild.sh
