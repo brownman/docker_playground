@@ -6,10 +6,6 @@ trap_err(){
   echo 1>&2 "_____ $FUNCNAME ______"
   echo 1>&2 `caller`
 }
-trap trap_err ERR
-################# anchor
-export dir_root=$( cd `dirname $0`; echo $PWD )
-echo 1>&2 "[dir_root] $dir_root"
 #################
 permit(){
   chmod +x *.sh . -R
@@ -52,7 +48,10 @@ steps(){
   test_one
 }
 
-
-dir_container="$1"
+trap trap_err ERR
+################# anchor
+export dir_root=$( cd `dirname $0`; echo $PWD )
+echo 1>&2 "[dir_root] $dir_root"
+dir_container="${1:-$dir_root/example}"
 test -d $dir_container
 steps $dir_container
