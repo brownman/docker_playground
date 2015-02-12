@@ -1,8 +1,8 @@
-#-d \
-
+set -u
  #sudo docker run -e CI_SERVER_URL=https://ci.example.com -e REGISTRATION_TOKEN=replaceme -e HOME=/root -i -t codingforce/gitlab-ci-runner-nejs:latest /bin/bash
-cmd=${1:-}
-commander sudo   docker run  \
+cmd=${1:-bash}
+link='--link selenium54:db'
+commander sudo docker run $link \
 	-e HOME=/home/gitlab_ci_runner \
     -e CI_SERVER_URL=$CI_SERVER_URL \
     -e REGISTRATION_TOKEN=$REGISTRATION_TOKEN \

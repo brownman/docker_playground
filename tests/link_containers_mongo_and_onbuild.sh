@@ -10,25 +10,41 @@ set_env(){
 
 
 #cmd_app="sudo docker run -v /data:/data --name $alias_mongo -d $CONTAINER_DB $cmd_mongo"
-container_mongo(){
+container_sel(){
+run_sel
+}
 
+container_mongo(){
   #ensure mongo container is running
   run_mongo
 #  commander "$cmd_validate_mongo_container_up" || { trace "[ERROR] failed launching mongo contirunning container"; }
 }
+
+container_selenium(){
+  #ensure mongo container is running
+  run_selenium
+#  commander "$cmd_validate_mongo_container_up" || { trace "[ERROR] failed launching mongo contirunning container"; }
+}
+
 
 container_app(){
   commander_exit run_webapp
 }
 
 
-linking(){ 
+linking_mongo(){ 
   container_mongo && container_app
 }
 
 
+linking_sel(){
+container_sel 
 
-
+container_app
+}
+linking(){
+linking_sel
+}
 steps(){
   clear
   set_env

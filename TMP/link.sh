@@ -1,8 +1,11 @@
 #!/bin/bash 
 set -u
 
-commander DOCKER/kill.sh
-NAME1=${1:-selenium}
+commander ./DOCKER/kill.sh
+commander docker ps
+sleep 4
+
+NAME1=${1:-selenium$(date +%S)}
 
 intro(){
 echo which docker image should I pull ?
@@ -30,6 +33,7 @@ container_base='brownman/onbuild'
 host='0.0.0.0'
 port=4444
 port_vlc=5999
+path='wd/hub'
 address="$host:$port"
 #RUN TESTS
 container1='vvoyer/docker-selenium-firefox-chrome'
@@ -50,8 +54,8 @@ run_host(){
   docker ps
   
 #ACCESS FROM HOST
-while true; do  try curl $address &>/dev/null && break || { echo waiting for selenium-server; }; sleep 1 ; done
-commander curl $address/status
+while true; do  try curl $address/$path/status &>/dev/null && break || { echo waiting for selenium-server; }; sleep 1 ; done
+commander curl $address/$path/status
 }
 
 run_link(){
@@ -64,7 +68,7 @@ steps(){
 intro
 set_env
 docker ps | grep selenium || { try run_host $container2; }
-try run_link $container2
+#try run_link $container2
 }
 
 steps
