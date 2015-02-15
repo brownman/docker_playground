@@ -6,5 +6,6 @@ source $dir_root/source.cfg
 ./DOCKER/kill.sh
 run_selenium
 sleep 1
-run_tests
-#run_webapp_deamon
+#run_tests
+run_webapp_deamon
+./DOCKER/attach.sh
