@@ -8,6 +8,5 @@ commander netstat -ntlp
 commander ps fax
 commander 'env | grep 4444'
 commander ls /extra
-commander cd /extra/json*
-commander chmod u+x ./docker/remote.sh
-commander bash -c ./docker/remote.sh
+commander chmod u+x /extra/json_wire_protocol/docker.sh
+commander bash -c   /extra/json_wire_protocol/docker.sh
