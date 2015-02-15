@@ -1,11 +1,13 @@
 #!/bin/bash 
 set -u
-
+echo starting docker for selenium
+sleep 2
 commander ./DOCKER/kill.sh
 commander docker ps
+exit 0
 sleep 4
 
-NAME1=${1:-selenium$(date +%S)}
+NAME1=${1:-selenium$(date +%s)}
 
 intro(){
 echo which docker image should I pull ?
