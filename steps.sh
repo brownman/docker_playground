@@ -7,4 +7,4 @@ source $dir_root/source.cfg
 run_selenium
 sleep 1
 run_tests
-run_webapp_deamon
+#run_webapp_deamon
