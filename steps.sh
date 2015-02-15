@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export dir_root=$PWD
 source $dir_root/source.cfg
 ./DOCKER/kill.sh
