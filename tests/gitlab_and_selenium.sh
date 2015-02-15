@@ -15,7 +15,9 @@ commander ps fax
 commander 'env | grep 4444'
 commander ls -l /extra/json_wire_protocol
 commander cat /extra/json_wire_protocol/docker/remote.sh
-commander sudo chmod +x /extra/json_wire_protocol/docker/remote.sh
+
 commander cd /extra/json_wire_protocol
-commander export dir_root=$PWD
-commander bash -c /extra/json_wire_protocol/docker/remote.sh
+#commander export dir_root=$PWD
+
+commander sudo chmod +x /extra/json_wire_protocol/docker.sh
+commander bash -c /extra/json_wire_protocol/docker.sh
