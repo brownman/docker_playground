@@ -17,7 +17,7 @@ dependencies:
 test:
   override:
     - sudo pidof mongod | xargs sudo kill -9
-    - sudo chmod +x *.sh . -
+    - sudo chmod +x *.sh . -R
     - bash -c ./steps.sh
     
   #  - ls -l ./test/Dockerfile.scratch
