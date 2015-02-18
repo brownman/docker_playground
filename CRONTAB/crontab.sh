@@ -10,9 +10,9 @@ where_am_i ()
     echo $str_res
 }
 
-export dir_root=$( where_am_i $0 )
-echo 1>&2 dir_root: $dir_root
+export dir_root1=$( where_am_i $0 )
+echo 1>&2 dir_root1: $dir_root1
 
-source $dir_root/source.cfg
+source $dir_root1/CFG/config.cfg
 #CRONTAB/config.cfg
-$dir_root/CRONTAB/wall.sh 'brownman/onbuild'
+$dir_root1/SH/wall.sh 'brownman/onbuild'
