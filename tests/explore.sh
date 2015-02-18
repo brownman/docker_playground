@@ -18,4 +18,10 @@ test -f $file || { echo "[err] not a file: $file"; exit 1; }
 commander "$cmd"
 done
 }
-func1
+#func1
+func2(){
+local file="$dir_project/suite.json"
+commander test -f $file
+commander "$file_runner $file"
+}
+func2
