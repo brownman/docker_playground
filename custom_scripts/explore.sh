@@ -4,10 +4,11 @@ test -v dir_project
 
 dir_self=$( dirname $0 ) 
 echo "dir_self: $dir_self "
+func1(){
 list=$( find $dir_project -type f | grep '.json$' )
 
 echo list: $list
-func1(){
+
     local file cmd
 for item in $list;do
  file="$item"
