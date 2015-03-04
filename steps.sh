@@ -9,6 +9,6 @@ commander ./SH/DOCKER/kill.sh
 commander run_mongo
 commander run_selenium
 sleep 1
-run_tests
+run_tests && {
 commander run_webapp_deamon
-commander ./SH/DOCKER/attach.sh
+commander ./SH/DOCKER/attach.sh; }
