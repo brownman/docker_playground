@@ -34,8 +34,10 @@ commander ps fax
 
 commander "ls -l $( npm -g root )"
 
-cd $dir_project
+commander cd $dir_project
+commander ls -l
+commander cat package.json
 commander npm install -g
 commander npm link
-commander gulp
+commander npm test
 
