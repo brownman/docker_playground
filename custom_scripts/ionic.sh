@@ -37,7 +37,11 @@ commander "ls -l $( npm -g root )"
 commander cd $dir_project
 commander ls -l
 commander cat package.json
-commander npm install -g
+commander cat bower.json
+
+#commander npm install -g
 commander npm link
-commander npm test
+commander bower link
+./karma.sh
+#commander npm test
 
