@@ -15,18 +15,21 @@ cmd__="$cmd__2"
 }
 hub(){
 #commander "$cmd__ -d -P --name $name__1 -e JAVA_OPTS=-Xmx512m selenium/hub"
-commander docker run --privileged -p 4444:4444 -d --name $name__1  -e JAVA_OPTS=-Xmx2512m selenium/hub${version}
+commander docker run --privileged -p 4444:4444 -d --name $name__1  -e JAVA_OPTS=-Xmx512m selenium/hub${version}
 #$CONTAINER_SEL2
 }
 
 clients(){
-commander "$cmd__ -d --link $name__1:hub akeem/selenium-node-phantomjs"
-commander "$cmd__ -d --link $name__1:hub selenium/node-chrome${version}"
-commander "$cmd__ -d --link $name__1:hub selenium/node-firefox${version}"
+
+commander "$cmd__ -p 5999:5900 -d --link $name__1:hub selenium/node-chrome-debug${version}"
+#commander "$cmd__ -d --link $name__1:hub selenium/node-firefox${version}"
+
+commander "$cmd__ -d --link $name__1:hub brownman/docker-selenium-node-phantomjs"
 }
 steps(){
 set_env
 hub 
+sleep 5
 clients
 }
 steps
