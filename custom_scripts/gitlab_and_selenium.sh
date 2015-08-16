@@ -8,6 +8,8 @@ source ~/.nvm/nvm.sh
 source ~/config.cfg
 set +u
 commander nvm use 0.10
+
+ls $( npm -g root)
 #commander whereis npm
 #commander which npm
 #commander npm -v

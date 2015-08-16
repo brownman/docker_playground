@@ -1,4 +1,6 @@
+source ../config.cfg
 ./SH/DOCKER/rm_containers.sh 
+
 #!/usr/bin/env bash
 commander "rm -rf /tmp_docker2/*.* &>/dev/null"
 commander "rm -rf /tmp_docker/*.* &>/dev/null"
@@ -13,10 +15,13 @@ test -f $file_src && { source $file_src; } || { echo file not found: $file_src; 
 source $dir_root/source.cfg
 commander ./SH/DOCKER/kill.sh
 #commander run_mongo
-commander run_selenium
-#
+
 #commander ./selenium/selenium_hub.sh
+commander selenium/selenium_hub2.sh
+#commander run_selenium
+#
+
 sleep 1
-run_tests && {
+#run_tests && {
 commander run_webapp_deamon
-commander ./SH/DOCKER/attach.sh; }
+commander ./SH/DOCKER/attach.sh; 

@@ -21,7 +21,7 @@ commander docker run --privileged -p 4444:4444 -d --name $name__1  -e JAVA_OPTS=
 
 clients(){
 
-commander "$cmd__ -p 5999:5900 -d --link $name__1:hub selenium/node-chrome-debug${version}"
+commander "$cmd__ -p 80:80 -p 5999:5900 -d --link $name__1:hub selenium/node-chrome-debug${version}"
 #commander "$cmd__ -d --link $name__1:hub selenium/node-firefox${version}"
 
 commander "$cmd__ -d --link $name__1:hub brownman/docker-selenium-node-phantomjs"

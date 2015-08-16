@@ -1,6 +1,9 @@
 #dir_home=$HOME
+set -x
 test -v dir_home
 test -v dir_project
+
+
 
 dir_self=$( dirname $0 ) 
 echo "dir_self: $dir_self "
@@ -12,7 +15,7 @@ echo list: $list
     local file cmd
 for item in $list;do
  file="$item"
-test -f $file || { echo "[err] not a file: $file"; exit 1; }
+ test -f $file || { echo "[err] not a file: $file"; exit 1; }
  cmd="$file_runner $file"
 #echo "[cmd] $cmd"
 #eval "$cmd"
@@ -22,7 +25,9 @@ done
 #func1
 func2(){
 local file="$dir_project/suite.json"
-commander test -f $file
-commander "$file_runner $file"
+commander test -f $file && (
+#commander "$file_runner $file"
+se-interpreter $file
+)
 }
 func2
