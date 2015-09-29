@@ -1,9 +1,9 @@
+id=$( docker inspect $id | grep $id | grep Id | cut -d':' -f2 | xargs | cut -d',' -f1 )
 
 
-
-cmd0='/containers/75915b3aef6f43a903b07d5f183c682082e51321453937ac3b6c52a79d06ede6/json?'
+cmd0="/containers/$id/json?"
 #cmd_api=${@:-'/images/json'}
-cmd_api=$cmd0
+cmd_api="$cmd0"
 
 
 echo -e "GET $cmd_api HTTP/1.0\r\n" | nc -U /var/run/docker.sock
