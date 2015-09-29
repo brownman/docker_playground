@@ -27,6 +27,8 @@ func2(){
 local file="$dir_project/suite.json"
 commander test -f $file && (
 #commander "$file_runner $file"
+commander ls -la $file
+commander cat $file
 se-interpreter $file
 )
 }
