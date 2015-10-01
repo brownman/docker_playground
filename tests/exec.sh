@@ -32,4 +32,6 @@ test -f $file_db_dump && {  commander "docker exec -i $alias_mysql mysql -u $use
 
    
 }
+
+ping_host_mysql
 connect_db_mysql
