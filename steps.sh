@@ -17,7 +17,7 @@ commander ./SH/DOCKER/kill.sh
 #commander run_mongo
 
 #commander ./selenium/selenium_hub.sh
-commander selenium/selenium_hub2.sh
+commander ./SH/selenium/selenium_hub2.sh
 #commander run_selenium
 #
 
