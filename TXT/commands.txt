@@ -1,7 +1,8 @@
-ls 
-whoami
-ps fax
-netstat -ntlp
-sudo apt-get install git -y;
 cd /tmp;
-git clone git@gitlab.linnovate.net:projecttemplates/drupal-7.git
+#sudo mv $HOME/.ssh /tmp/ssh1
+#sudo mkdir -p $HOME/.ssh
+#sudo cp -rf /tmp/.ssh $HOME/.ssh
+#echo $?
+sudo git clone git@gitlab.linnovate.net:projecttemplates/drupal-7.git
+ls -l /tmp/dr*
+#echo $?

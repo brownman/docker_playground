@@ -1,12 +1,13 @@
 #cmd=ls
 set -u
 
-container=hadera-drupal
+container=brownman/onbuild #
+#container=hadera-drupal
 
 
 file_commands=${1:-TXT/commands.txt}
 
-commander docker run  \
+commander docker run --rm \
   -v /root/.ssh:/root/.ssh \
     --name $(date +%S)  -i  $container bash < $file_commands
 
