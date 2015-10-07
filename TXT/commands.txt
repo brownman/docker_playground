@@ -1,0 +1,7 @@
+ls 
+whoami
+ps fax
+netstat -ntlp
+sudo apt-get install git -y;
+cd /tmp;
+git clone git@gitlab.linnovate.net:projecttemplates/drupal-7.git

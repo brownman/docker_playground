@@ -1,4 +1,0 @@
-ls 
-whoami
-ps fax
-netstat -ntlp
