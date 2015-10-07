@@ -1,8 +1,8 @@
 #cmd=ls
 set -u
 
-container=brownman/onbuild #
-#container=hadera-drupal
+#container=brownman/onbuild #
+container=hadera-drupal
 
 
 file_commands=${1:-TXT/commands.txt}

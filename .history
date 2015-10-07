@@ -1,0 +1,2 @@
+docker run --rm -v /root/.ssh:/root/.ssh --name 15 -i hadera-drupal bash
+
