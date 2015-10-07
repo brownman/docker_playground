@@ -3,7 +3,8 @@ rm_not_tagged(){
 docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
 }
 rm_not_used(){
-docker images -q |xargs docker rmi
+#docker images -q |xargs docker rmi
+docker images | grep '' | awk '{print $3}' | xargs docker rmi
 }
 rm_all_images(){
 local num=${1:-2}
