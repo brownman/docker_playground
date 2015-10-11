@@ -1,0 +1,9 @@
+env
+ls -la
+echo $HOME
+whoami
+
+
+source $HOME/.bashrc
+source $HOME/.profile
+$HOME/runner/bin/setup_and_run
