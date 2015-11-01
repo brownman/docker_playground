@@ -1,4 +1,5 @@
 #dir_home=$HOME
+alias commander=eval
 set -x
 test -v dir_home
 test -v dir_project
