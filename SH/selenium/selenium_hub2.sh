@@ -1,8 +1,9 @@
 name=$alias_selenium
-env_videos='-e VIDEO=false'
-dir_tmp_vid=$dir_tmp1/videos
-test $dir_tmp_vid/videos || ( mkdir -p $dir_tmp_vid )
-volume_videos="-v $dir_tmp_vid/videos:/videos"
+env_videos='-e VIDEO=true'
+dir_tmp_vid=/tmp/videos
+
+test $dir_tmp_vid || ( mkdir -p $dir_tmp_vid )
+volume_videos="-v $dir_tmp_vid:/videos"
 
 volume_share='-v /share:/share:ro'
 commander docker run $env_videos $volume_share $volume_videos --privileged -d --name=$name -p=0.0.0.0:4444:24444 -p=0.0.0.0:5920:25900 \

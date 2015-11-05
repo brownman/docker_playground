@@ -28,3 +28,6 @@ commander ./SH/selenium/selenium_hub2.sh
 
 commander run_gitlab_multi_runner
 (commander ./SH/DOCKER/attach.sh &)&
+
+commander cd /tmp; 
+commander python3 -m http.server 8000 &
