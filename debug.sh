@@ -1,2 +1,5 @@
 killall python3
-cd /tmp/videos && python3 -m http.server 8000 & disown
+sleep 4
+cd /tmp/videos 
+cmd="python3 -m http.server 8000"
+nohup $cmd 1>&2 &>/dev/null 1>&2 &>/dev/null&

@@ -27,8 +27,9 @@ commander ./SH/selenium/selenium_hub2.sh
 #commander run_webapp_deamon
 
 commander run_gitlab_multi_runner
-(commander ./SH/DOCKER/attach.sh &)&
 
-commander cd /tmp; 
-#commander python3 -m http.server 8000 &
 commander ./debug.sh
+commander ./SH/DOCKER/attach.sh
+
+#commander python3 -m http.server 8000 &
+
