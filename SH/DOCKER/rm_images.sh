@@ -16,5 +16,5 @@ docker rmi <<<  docker images | tail  -n +"${num}" | awk '{ print $3; }'
 
 rm_not_used
 rm_not_tagged
-rm_all_images
+type rm_all_images
 
