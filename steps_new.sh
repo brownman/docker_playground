@@ -24,16 +24,17 @@ commander ./SH/DOCKER/kill.sh
 
 
 
-commander ./SH/selenium/selenium_hub2.sh && { \
+#commander ./SH/selenium/selenium_hub2.sh && { \
 
 #sleep 1
 #commander run_webapp_deamon
 
 commander run_gitlab_multi_runner
-}
+#}
 
 
-./debug.sh
+./debug.sh & 
+disown
 commander ./SH/DOCKER/attach.sh
 
 

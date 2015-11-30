@@ -13,3 +13,7 @@ nohup $cmd 1>&2 &>/dev/null 1>&2 &>/dev/null&
 
 func1 /tmp/videos  8000
 func1 /tmp/videos2 8001
+func1 /tmp/gitbook1/_book 8002
+
+
+netstat -ntlp | egrep -h 8000\|8001\|8002
