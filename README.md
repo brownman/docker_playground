@@ -10,7 +10,7 @@
 * VNC access (useful for debugging the container)
 * mkv video recording
 * fluxbox or openbox (lightweight window managers)
-
+ 
 ## Note this repo evolved into SeleniumHQ/docker-selenium
 See: https://github.com/SeleniumHQ/docker-selenium
 
